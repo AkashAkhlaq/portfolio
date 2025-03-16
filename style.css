@@ -1,0 +1,123 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    background: #333;
+    padding: 15px;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, #3498db, #2ecc71);
+    color: white;
+    padding: 100px 20px;
+}
+
+.hero .highlight {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    color: white;
+    background: #e67e22;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #d35400;
+}
+
+/* Sections */
+.content {
+    padding: 50px;
+    background: white;
+    margin: 20px auto;
+    border-radius: 10px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Skills Section */
+.skill {
+    text-align: left;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.progress-bar {
+    width: 100%;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 25px;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: #3498db;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    transition: width 1s ease-in-out;
+}
+
+/* Contact & Social Icons */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    text-decoration: none;
+    margin: 10px;
+    font-size: 20px;
+    color: #3498db;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #e67e22;
+}
+
+.social-links i {
+    margin-right: 5px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+}
