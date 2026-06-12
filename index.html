@@ -1,89 +1,576 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akash Qureshi | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Akash Akhlaq — GHL Developer & Front-End Web Developer at HighLevelWorx. BSCS student building smart automation workflows and beautiful web experiences." />
+  <title>Akash Akhlaq | GHL Developer & Front-End Dev</title>
+
+  <!-- Google Fonts: Inter (body) + Space Grotesk (display) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Remix Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header>
-        <nav>
-            <h1>Akash Qureshi</h1>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+  <!-- ============================================================
+       CUSTOM CURSOR
+  ============================================================ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- ============================================================
+       NOISE OVERLAY (subtle texture)
+  ============================================================ -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <nav class="nav-container" aria-label="Main navigation">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo" aria-label="Akash Akhlaq — Home">
+        <span class="logo-bracket">&lt;</span>Akash<span class="logo-accent">.</span><span class="logo-bracket">/&gt;</span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact"  class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- CTA + Hamburger -->
+      <div class="nav-actions">
+        <a href="#contact" class="btn btn-primary btn-sm">Hire Me</a>
+        <!-- Hamburger — accessible toggle -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+      <ul class="mobile-links" role="list">
+        <li><a href="#about"    class="mobile-link">About</a></li>
+        <li><a href="#skills"   class="mobile-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-link">Projects</a></li>
+        <li><a href="#contact"  class="mobile-link">Contact</a></li>
+        <li><a href="#contact"  class="mobile-link mobile-cta">Hire Me →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         HERO SECTION
+    ============================================================ -->
+    <section class="hero" id="hero" aria-label="Introduction">
+
+      <!-- Animated grid background -->
+      <div class="hero-grid" aria-hidden="true"></div>
+      <!-- Glow orbs -->
+      <div class="orb orb-1" aria-hidden="true"></div>
+      <div class="orb orb-2" aria-hidden="true"></div>
+
+      <div class="hero-content">
+
+        <!-- Status badge — the signature element -->
+        <div class="status-badge" aria-label="Current status">
+          <span class="badge-dot"></span>
+          Available for freelance work
+        </div>
+
+        <h1 class="hero-title">
+          <span class="title-line reveal-up">Hi, I'm</span>
+          <span class="title-name reveal-up">Akash Akhlaq</span>
+        </h1>
+
+        <!-- Typewriter -->
+        <p class="hero-subtitle reveal-up">
+          <span class="subtitle-static">I build&nbsp;</span>
+          <span class="typewriter-wrapper">
+            <span class="typewriter" id="typewriter" aria-live="polite"></span>
+            <span class="typewriter-cursor" aria-hidden="true">|</span>
+          </span>
+        </p>
+
+        <!-- Short bio -->
+        <p class="hero-bio reveal-up">
+          GHL Developer at <a href="https://highlevelworx.com" target="_blank" rel="noopener" class="inline-link">HighLevelWorx</a> · 
+          BSCS Student · Crafting automation workflows &amp; pixel-perfect web experiences from Rawalpindi, PK.
+        </p>
+
+        <!-- CTA row -->
+        <div class="hero-cta reveal-up" role="group" aria-label="Call to action buttons">
+          <a href="#projects" class="btn btn-primary magnetic">
+            <span>View My Work</span>
+            <i class="ri-arrow-right-line" aria-hidden="true"></i>
+          </a>
+          <a href="#contact" class="btn btn-ghost magnetic">
+            <span>Get In Touch</span>
+          </a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="hero-stats reveal-up" role="list" aria-label="Quick stats">
+          <div class="stat" role="listitem">
+            <span class="stat-num" data-target="15">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Projects Delivered</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat" role="listitem">
+            <span class="stat-num" data-target="1">0</span><span class="stat-suffix">yr</span>
+            <span class="stat-label">Professional Exp.</span>
+          </div>
+          <div class="stat-divider" aria-hidden="true"></div>
+          <div class="stat" role="listitem">
+            <span class="stat-num" data-target="10">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile image -->
+      <div class="hero-image reveal-right">
+        <div class="image-ring" aria-hidden="true"></div>
+        <div class="image-glow" aria-hidden="true"></div>
+        <picture>
+          <!-- Replace src with your actual photo -->
+          <img
+            src="https://api.dicebear.com/8.x/personas/svg?seed=AkashAkhlaq&backgroundColor=6c63ff"
+            alt="Akash Akhlaq profile photo"
+            class="profile-img"
+            width="360"
+            height="360"
+            loading="eager"
+          />
+        </picture>
+        <!-- Floating tech chip -->
+        <div class="tech-chip chip-ghl" aria-label="GoHighLevel">
+          <i class="ri-settings-3-line" aria-hidden="true"></i> GHL Dev
+        </div>
+        <div class="tech-chip chip-code" aria-label="Front-End Development">
+          <i class="ri-code-s-slash-line" aria-hidden="true"></i> Front-End
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+        <span class="scroll-dot"></span>
+        <span class="scroll-text">Scroll down</span>
+      </a>
+    </section>
+
+    <!-- ============================================================
+         ABOUT SECTION
+    ============================================================ -->
+    <section class="about section-padding" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="section-eyebrow" aria-hidden="true">// about me</div>
+        <h2 class="section-title" id="about-heading">The Story So Far</h2>
+
+        <div class="about-grid">
+          <!-- Left: text -->
+          <div class="about-text fade-in-section">
+            <p class="about-lead">
+              I'm a Front-End developer and GoHighLevel specialist who loves turning complex problems into clean, automated solutions.
+            </p>
+            <p>
+              Currently pursuing a <strong>Bachelor's in Computer Science (BSCS)</strong> after completing my FSC from Government Model Science College, Muzaffarabad. I work full-time as a <strong>GHL Developer at <a href="https://highlevelworx.com" target="_blank" rel="noopener" class="inline-link">HighLevelWorx</a></strong>, where I build CRM workflows, automation funnels, and high-converting landing pages for clients worldwide.
+            </p>
+            <p>
+              My sweet spot lives at the intersection of marketing technology and great code — where a beautifully built funnel also runs flawlessly under the hood.
+            </p>
+
+            <!-- Download CV button -->
+            <a href="#" class="btn btn-outline magnetic" download aria-label="Download CV">
+              <i class="ri-download-2-line" aria-hidden="true"></i>
+              <span>Download CV</span>
+            </a>
+          </div>
+
+          <!-- Right: info cards -->
+          <div class="about-cards fade-in-section">
+            <article class="info-card glass-card">
+              <i class="ri-graduation-cap-line card-icon" aria-hidden="true"></i>
+              <h3>Education</h3>
+              <p><strong>BSCS</strong> — In Progress</p>
+              <p class="card-sub">FSC · Govt. Model Science College, Muzaffarabad</p>
+            </article>
+            <article class="info-card glass-card">
+              <i class="ri-briefcase-4-line card-icon" aria-hidden="true"></i>
+              <h3>Current Role</h3>
+              <p><strong>GHL Developer</strong></p>
+              <p class="card-sub">HighLevelWorx · Full-time</p>
+            </article>
+            <article class="info-card glass-card">
+              <i class="ri-map-pin-2-line card-icon" aria-hidden="true"></i>
+              <h3>Location</h3>
+              <p><strong>Rawalpindi, PK</strong></p>
+              <p class="card-sub">Open to remote worldwide</p>
+            </article>
+            <article class="info-card glass-card">
+              <i class="ri-heart-line card-icon" aria-hidden="true"></i>
+              <h3>Interests</h3>
+              <p><strong>Automation · SEO</strong></p>
+              <p class="card-sub">Marketing Tech · UI Design</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SKILLS SECTION
+    ============================================================ -->
+    <section class="skills section-padding" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <div class="section-eyebrow" aria-hidden="true">// my toolkit</div>
+        <h2 class="section-title" id="skills-heading">Skills & Technologies</h2>
+
+        <div class="skills-grid fade-in-section">
+
+          <!-- Skill category cards -->
+          <article class="skill-category glass-card">
+            <div class="skill-cat-header">
+              <i class="ri-layout-3-line skill-cat-icon" aria-hidden="true"></i>
+              <h3>Front-End Dev</h3>
+            </div>
+            <ul class="skill-tags" role="list" aria-label="Front-end skills">
+              <li class="skill-tag">HTML5</li>
+              <li class="skill-tag">CSS3</li>
+              <li class="skill-tag">JavaScript</li>
+              <li class="skill-tag">Responsive Design</li>
+              <li class="skill-tag">AOS Animations</li>
+              <li class="skill-tag">Bootstrap</li>
             </ul>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h2>Hi, I'm <span class="highlight">Akash Qureshi</span></h2>
-        <p>Front-End Web Developer | Web SEO Expert | Coder</p>
-        <a href="#projects" class="btn">View My Work</a>
-    </section>
-
-    <section id="about" class="content">
-        <h2>About Me</h2>
-        <p>I'm passionate about **Front-End Web Development, Web SEO, and Coding**. I love building beautiful and fast websites that rank well on search engines.</p>
-    </section>
-
-    <section id="skills" class="content">
-        <h2>My Skills</h2>
-        <div class="skill">
-            <p>Front-End Web Development</p>
-            <div class="progress-bar">
-                <div class="progress" style="width: 90%;">90%</div>
+            <div class="skill-bar-wrap" aria-label="Proficiency 90%">
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 90%"></div></div>
+              <span class="skill-pct">90%</span>
             </div>
-        </div>
-        <div class="skill">
-            <p>Web SEO</p>
-            <div class="progress-bar">
-                <div class="progress" style="width: 85%;">85%</div>
+          </article>
+
+          <article class="skill-category glass-card">
+            <div class="skill-cat-header">
+              <i class="ri-flow-chart skill-cat-icon" aria-hidden="true"></i>
+              <h3>GoHighLevel (GHL)</h3>
             </div>
-        </div>
-        <div class="skill">
-            <p>Coding (JavaScript, HTML, CSS, Python)</p>
-            <div class="progress-bar">
-                <div class="progress" style="width: 80%;">80%</div>
+            <ul class="skill-tags" role="list" aria-label="GHL skills">
+              <li class="skill-tag highlight">CRM Workflows</li>
+              <li class="skill-tag highlight">Funnel Builder</li>
+              <li class="skill-tag highlight">Automation</li>
+              <li class="skill-tag highlight">Pipeline Mgmt</li>
+              <li class="skill-tag highlight">Sub-accounts</li>
+              <li class="skill-tag highlight">Triggers</li>
+            </ul>
+            <div class="skill-bar-wrap" aria-label="Proficiency 88%">
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 88%"></div></div>
+              <span class="skill-pct">88%</span>
             </div>
+          </article>
+
+          <article class="skill-category glass-card">
+            <div class="skill-cat-header">
+              <i class="ri-search-eye-line skill-cat-icon" aria-hidden="true"></i>
+              <h3>Web SEO</h3>
+            </div>
+            <ul class="skill-tags" role="list" aria-label="SEO skills">
+              <li class="skill-tag">On-Page SEO</li>
+              <li class="skill-tag">Technical SEO</li>
+              <li class="skill-tag">Keyword Research</li>
+              <li class="skill-tag">Meta Optimization</li>
+              <li class="skill-tag">Core Web Vitals</li>
+            </ul>
+            <div class="skill-bar-wrap" aria-label="Proficiency 85%">
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 85%"></div></div>
+              <span class="skill-pct">85%</span>
+            </div>
+          </article>
+
+          <article class="skill-category glass-card">
+            <div class="skill-cat-header">
+              <i class="ri-terminal-box-line skill-cat-icon" aria-hidden="true"></i>
+              <h3>Programming</h3>
+            </div>
+            <ul class="skill-tags" role="list" aria-label="Programming skills">
+              <li class="skill-tag">Python</li>
+              <li class="skill-tag">JavaScript (ES6+)</li>
+              <li class="skill-tag">Git & GitHub</li>
+              <li class="skill-tag">REST APIs</li>
+              <li class="skill-tag">VS Code</li>
+            </ul>
+            <div class="skill-bar-wrap" aria-label="Proficiency 80%">
+              <div class="skill-bar"><div class="skill-fill" style="--pct: 80%"></div></div>
+              <span class="skill-pct">80%</span>
+            </div>
+          </article>
+
         </div>
+      </div>
     </section>
 
-    <section id="projects" class="content">
-        <h2>Projects</h2>
-        <p>🚧 Coming Soon! I'm currently working on exciting projects. Stay tuned! 🚀</p>
+    <!-- ============================================================
+         PROJECTS SECTION
+    ============================================================ -->
+    <section class="projects section-padding" id="projects" aria-labelledby="projects-heading">
+      <div class="container">
+        <div class="section-eyebrow" aria-hidden="true">// my work</div>
+        <h2 class="section-title" id="projects-heading">Featured Projects</h2>
+
+        <div class="projects-grid fade-in-section">
+
+          <!-- Project Card 1 -->
+          <article class="project-card glass-card" tabindex="0">
+            <div class="project-img-wrap" aria-hidden="true">
+              <div class="project-img-placeholder pi-1"></div>
+              <div class="project-overlay">
+                <a href="#" class="overlay-btn" target="_blank" rel="noopener" aria-label="Live demo of GHL Automation Suite">
+                  <i class="ri-external-link-line"></i>
+                </a>
+                <a href="#" class="overlay-btn" target="_blank" rel="noopener" aria-label="GitHub repo for GHL Automation Suite">
+                  <i class="ri-github-line"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <div class="project-featured-tag">Featured</div>
+              <h3 class="project-title">GHL Automation Suite</h3>
+              <p class="project-desc">End-to-end GoHighLevel CRM workflow built for a real-estate agency — lead capture, automated follow-ups, pipeline stages, and appointment booking.</p>
+              <ul class="project-tech" role="list" aria-label="Technologies used">
+                <li>GoHighLevel</li>
+                <li>Automation</li>
+                <li>CRM</li>
+                <li>Zapier</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+                  <i class="ri-external-link-line" aria-hidden="true"></i> Live Demo
+                </a>
+                <a href="#" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+                  <i class="ri-github-line" aria-hidden="true"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2 -->
+          <article class="project-card glass-card" tabindex="0">
+            <div class="project-img-wrap" aria-hidden="true">
+              <div class="project-img-placeholder pi-2"></div>
+              <div class="project-overlay">
+                <a href="#" class="overlay-btn" target="_blank" rel="noopener" aria-label="Live demo of Business Landing Page">
+                  <i class="ri-external-link-line"></i>
+                </a>
+                <a href="#" class="overlay-btn" target="_blank" rel="noopener" aria-label="GitHub repo for Business Landing Page">
+                  <i class="ri-github-line"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">High-Convert Landing Page</h3>
+              <p class="project-desc">Pixel-perfect, SEO-optimised landing page for a coaching business. Built with pure HTML/CSS/JS, deployed via GHL Funnel Builder with A/B tested CTAs.</p>
+              <ul class="project-tech" role="list" aria-label="Technologies used">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>SEO</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+                  <i class="ri-external-link-line" aria-hidden="true"></i> Live Demo
+                </a>
+                <a href="#" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+                  <i class="ri-github-line" aria-hidden="true"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3 -->
+          <article class="project-card glass-card" tabindex="0">
+            <div class="project-img-wrap" aria-hidden="true">
+              <div class="project-img-placeholder pi-3"></div>
+              <div class="project-overlay">
+                <a href="#" class="overlay-btn" target="_blank" rel="noopener" aria-label="Live demo of SEO Dashboard">
+                  <i class="ri-external-link-line"></i>
+                </a>
+                <a href="#" class="overlay-btn" target="_blank" rel="noopener" aria-label="GitHub repo for SEO Dashboard">
+                  <i class="ri-github-line"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">SEO Performance Dashboard</h3>
+              <p class="project-desc">A lightweight Python + HTML dashboard aggregating keyword rankings, Core Web Vitals, and backlink data into one clean read for non-technical clients.</p>
+              <ul class="project-tech" role="list" aria-label="Technologies used">
+                <li>Python</li>
+                <li>HTML/CSS</li>
+                <li>SEO APIs</li>
+                <li>Charts.js</li>
+              </ul>
+              <div class="project-links">
+                <a href="#" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+                  <i class="ri-external-link-line" aria-hidden="true"></i> Live Demo
+                </a>
+                <a href="#" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">
+                  <i class="ri-github-line" aria-hidden="true"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Coming Soon Teaser Card -->
+          <article class="project-card project-card--soon glass-card" aria-label="More projects coming soon">
+            <div class="soon-inner">
+              <div class="soon-icon" aria-hidden="true">🚀</div>
+              <h3>More Coming Soon</h3>
+              <p>Currently shipping new projects. Check back or follow me on GitHub for the latest updates.</p>
+              <a href="https://github.com/AkashAkhlaq" target="_blank" rel="noopener" class="btn btn-outline btn-sm magnetic">
+                <i class="ri-github-line" aria-hidden="true"></i> Follow on GitHub
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="content">
-        <h2>Contact Me</h2>
-        <p>Email: akashakhlaq38@example.com</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/akash-akhlaq-a9a1002a7" target="_blank">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://instagram.com/kashixakash" target="_blank">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
+    <!-- ============================================================
+         CONTACT SECTION
+    ============================================================ -->
+    <section class="contact section-padding" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <div class="section-eyebrow" aria-hidden="true">// get in touch</div>
+        <h2 class="section-title" id="contact-heading">Let's Work Together</h2>
+
+        <div class="contact-grid fade-in-section">
+          <!-- Left: copy -->
+          <div class="contact-copy">
+            <p class="contact-lead">
+              Got a GHL project, a website to build, or just want to say hi? My inbox is always open.
+            </p>
+            <ul class="contact-details" role="list">
+              <li>
+                <a href="mailto:akashakhlaq38@gmail.com" class="contact-item magnetic" aria-label="Send email to Akash">
+                  <span class="contact-icon"><i class="ri-mail-line" aria-hidden="true"></i></span>
+                  <span>akashakhlaq38@gmail.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/AkashAkhlaq" target="_blank" rel="noopener" class="contact-item magnetic" aria-label="GitHub profile">
+                  <span class="contact-icon"><i class="ri-github-line" aria-hidden="true"></i></span>
+                  <span>github.com/AkashAkhlaq</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/akash-akhlaq-a9a1002a7/" target="_blank" rel="noopener" class="contact-item magnetic" aria-label="LinkedIn profile">
+                  <span class="contact-icon"><i class="ri-linkedin-box-line" aria-hidden="true"></i></span>
+                  <span>linkedin.com/in/akash-akhlaq</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://instagram.com/kashixakash" target="_blank" rel="noopener" class="contact-item magnetic" aria-label="Instagram profile">
+                  <span class="contact-icon"><i class="ri-instagram-line" aria-hidden="true"></i></span>
+                  <span>@kashixakash</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/akash.akhlaq.50" target="_blank" rel="noopener" class="contact-item magnetic" aria-label="Facebook profile">
+                  <span class="contact-icon"><i class="ri-facebook-box-line" aria-hidden="true"></i></span>
+                  <span>facebook.com/akash.akhlaq.50</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right: form — powered by FormSubmit (free, no backend needed) -->
+          <div class="contact-form-wrap glass-card">
+            <form
+              class="contact-form"
+              id="contactForm"
+              action="https://formsubmit.co/akashakhlaq38@gmail.com"
+              method="POST"
+              novalidate
+              aria-label="Contact form"
+            >
+              <!-- FormSubmit config — hidden fields -->
+              <input type="hidden" name="_subject"  value="New message from your portfolio! 🚀" />
+              <input type="hidden" name="_captcha"  value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input type="text"   name="_honey"    style="display:none" tabindex="-1" autocomplete="off" />
+
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email" />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="GHL Project / Freelance / Other" />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full magnetic">
+                <span>Send Message</span>
+                <i class="ri-send-plane-2-line" aria-hidden="true"></i>
+              </button>
+              <p class="form-status" id="formStatus" aria-live="polite"></p>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
-    <footer>
-        <p>© 2025 Akash Qureshi | All Rights Reserved</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/akash-akhlaq-a9a1002a7" target="_blank">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://instagram.com/kashixakash" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-    </footer>
+  </main>
 
-    <script src="script.js"></script>
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <a href="#hero" class="footer-logo" aria-label="Back to top">
+        <span class="logo-bracket">&lt;</span>Akash<span class="logo-accent">.</span><span class="logo-bracket">/&gt;</span>
+      </a>
+      <p class="footer-copy">© <span id="year"></span> Akash Akhlaq · Built with ❤️ from Rawalpindi, PK</p>
+      <div class="footer-socials" role="list" aria-label="Social links">
+        <a href="https://github.com/AkashAkhlaq" target="_blank" rel="noopener" class="social-link" role="listitem" aria-label="GitHub">
+          <i class="ri-github-line" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/akash-akhlaq-a9a1002a7/" target="_blank" rel="noopener" class="social-link" role="listitem" aria-label="LinkedIn">
+          <i class="ri-linkedin-box-line" aria-hidden="true"></i>
+        </a>
+        <a href="https://instagram.com/kashixakash" target="_blank" rel="noopener" class="social-link" role="listitem" aria-label="Instagram">
+          <i class="ri-instagram-line" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/akash.akhlaq.50" target="_blank" rel="noopener" class="social-link" role="listitem" aria-label="Facebook">
+          <i class="ri-facebook-box-line" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back-to-top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="ri-arrow-up-line" aria-hidden="true"></i>
+  </button>
+
+  <script src="script.js"></script>
 </body>
 </html>
